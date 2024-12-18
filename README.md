@@ -8,4 +8,8 @@ Assignments for Hyper Island Frontend program module: JavaScript and React.
 
 HTML Recap - find and fix the errors in the HTML file.
 
+### Assignment 2
+
+style with CSS
+
 ## React Assignments
