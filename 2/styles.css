@@ -1,0 +1,238 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --background-color: #1d1d1b;
+  --text-color: #86affa;
+  --contrast-color: white;
+
+  --fs-small: 1rem;
+  --fs-medium: 1.5rem;
+  --fs-large: 3rem;
+
+  --section-padding: 2rem 7rem;
+}
+
+@font-face {
+  font-family: "Lexend";
+  src: url("../assets/fonts/Lexend-Variable.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "Lexend", serif;
+  font-weight: 300;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+h1,
+h2 {
+  margin-bottom: 2rem;
+  font-size: var(--fs-large);
+}
+
+p {
+  max-width: 56ch;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  background-color: var(--background-color);
+  padding-top: 1rem;
+  text-align: center;
+  overflow: clip;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  h1 {
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+  nav {
+    padding: 1.5rem;
+    border-top: 2px solid var(--text-color);
+    border-bottom: 2px solid var(--text-color);
+    ul {
+      display: flex;
+      flex-direction: row;
+      gap: clamp(0.5rem, 5vw, 3rem);
+      list-style-type: none;
+      justify-content: center;
+      li {
+        align-self: center;
+        text-transform: uppercase;
+        font-weight: 600;
+        a {
+          color: var(--text-color);
+          font-size: 0.8rem;
+          transition: color 0.3s ease;
+          &:hover {
+            color: var(--contrast-color);
+          }
+        }
+      }
+    }
+  }
+}
+
+#section1 {
+  padding: var(--section-padding);
+  h2 {
+  }
+  p {
+  }
+  .link-example {
+    a {
+      color: var(--contrast-color);
+      font-weight: 600;
+      &:hover {
+        color: var(--text-color);
+      }
+    }
+  }
+  figure {
+    img {
+      max-width: 80%;
+    }
+    figcaption {
+      font-style: italic;
+      margin-top: 0.5rem;
+    }
+  }
+}
+
+#section2 {
+  padding: var(--section-padding);
+  h2 {
+  }
+  p {
+  }
+  .list-examples {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    list-style-position: inside;
+    .list {
+      margin-right: 4rem;
+    }
+  }
+}
+
+#section3 {
+  padding: var(--section-padding);
+  h2 {
+  }
+  p {
+  }
+}
+
+.form-example {
+    max-width: 32rem;
+    margin-top: 2rem;
+    padding: 1rem;
+    border: 2px solid var(--text-color);
+    background-color: var(--background-color);
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+    }
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border: 1px solid var(--text-color);
+      background-color: var(--background-color);
+      color: var(--text-color);
+      font-size: 1rem;
+    }
+    textarea {
+      resize: vertical;
+    }
+    .submit-button {
+      background-color: var(--text-color);
+      color: var(--background-color);
+      border: none;
+      padding: 0.8rem 2rem;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      &:hover {
+        background-color: var(--contrast-color);
+      }
+    }
+  }
+  
+
+#section4 {
+  padding: var(--section-padding);
+  padding-bottom: 4rem;
+  h2 {
+  }
+  p {
+  }
+}
+
+.table-example {
+  text-align: center;
+  border-collapse: collapse;
+  caption {
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+  }
+  thead {
+    tr {
+      th {
+        padding: 1rem;
+        border: 1px solid var(--contrast-color);
+        color: var(--text-color);
+      }
+    }
+  }
+  tbody {
+    tr {
+      td {
+        padding: 1rem;
+        border: 1px solid var(--contrast-color);
+        color: var(--text-color);
+      }
+    }
+  }
+  tfoot {
+    tr {
+      td {
+        padding: 1rem;
+        border: 1px solid var(--contrast-color);
+        color: var(--text-color);
+      }
+    }
+  }
+}
+
+#footer {
+  border-top: 2px solid var(--text-color);
+  display: flex;
+  justify-content: center;
+  padding-top: 1rem;
+}
