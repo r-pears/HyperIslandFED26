@@ -1,14 +1,19 @@
 :root {
   --clr-neutral-100: #fff;
+  --clr-neutral-600: #999;
+  --clr-neutral-700: #353535;
   --clr-neutral-800: #121212;
   --clr-neutral-900: #000;
 
-  --clr-text: var(--clr-neutral-100);
+  --clr-blue: #080927;
+
+  --clr-accent: var(--clr-blue);
   --clr-background: var(--clr-neutral-800);
+  --clr-text: var(--clr-neutral-100);
 }
 
 body {
-  --_body-padding-inline: 2rem;
+  --_body-padding-inline: 3rem;
   --_header-height: 8rem;
 
   display: grid;
@@ -37,6 +42,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
 
   position: fixed;
   inset: 0 0 auto 0;
@@ -46,9 +52,13 @@ header {
   height: var(--_header-height);
   padding-inline: var(--_body-padding-inline);
 
+  h1 {
+    margin: 0;
+  }
+
   nav ul {
     display: flex;
-    gap: 1rem;
+    gap: 3rem;
 
     list-style: none;
     margin: 0;
@@ -66,7 +76,80 @@ main {
   grid-template-columns: subgrid;
 
   .content-container {
-    
+    display: grid;
+    grid-template-columns: subgrid;
+  }
+
+  section {
+    grid-column: 4 / span 6;
+    margin-block: 0 5rem;
+  }
+
+  .list-container {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  form {
+    display: grid;
+    gap: 1rem;
+
+    background-color: var(--clr-accent);
+    border-radius: 1rem;
+    padding: 1rem;
+
+    fieldset {
+      display: grid;
+      gap: 0.25rem;
+
+      border: none;
+      padding: 0;
+
+      input,
+      textarea {
+        padding: 0.5ch 1ch;
+        resize: none;
+      }
+    }
+
+    input[type="submit"] {
+      justify-self: center;
+
+      padding: 0.5rem 2rem;
+      width: fit-content;
+    }
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+
+    caption {
+      margin-block: 0 0.5rem;
+    }
+
+    th,
+    td {
+      padding: 0.5rem;
+    }
+
+    thead {
+      background-color: var(--clr-accent);
+
+      th {
+        text-align: left;
+      }
+    }
+
+    tbody {
+      tr:nth-child(odd) {
+        background-color: var(--clr-neutral-700);
+      }
+
+      tr:hover {
+        background-color: var(--clr-neutral-600);
+      }
+    }
   }
 }
 
@@ -74,4 +157,20 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media (max-width: 965px) {
+  header {
+    justify-content: center;
+  }
+
+  main .content-container section {
+    grid-column: 3 / span 8;
+  }
+}
+
+@media (max-width: 680px) {
+  main .content-container section {
+    grid-column: 1 / -1;
+  }
 }
