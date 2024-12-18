@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+}
+
+/* HEADER section */
+
+header {
+    display: flex;
+    margin: 1rem;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1.5px solid black;
+}
+
+.navbar {
+    margin-bottom: 1rem;
+}
+
+.header-title {
+    text-transform: uppercase;
+}
+
+.section-list {
+    list-style: none;
+}
+.section-list a {
+    text-decoration: none;
+    color: black;
+}
+.section-list a:hover {
+    color: gray;
+}
+
+/* BODY section */
+
+.section-body {
+    margin: 1rem;
+}
+
+.section-title {
+    margin-bottom: 0.5rem;
+    background-color: rgba(185, 183, 183, 0.24);
+    border-radius: 3px;
+    padding: 0.5rem;
+}
+
+.section-desc a {
+    text-decoration: none;
+}
+.section-desc a:hover {
+    color: gray;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    box-shadow: 1px 1px 1px black;
+    margin-right: 1rem;
+}
+
+.bothlists {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.list-title {
+    margin-bottom: 0.5rem;
+    margin-left: 1rem;
+    font-size: 24px;
+}
+
+.olist li,
+.ulist li {
+    margin: 0.25rem;
+    font-size: 18px;
+}
+
+form {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+form label {
+    margin-bottom: 0.25rem;
+}
+
+form textarea {
+    height: 90%;
+    width: 90%;
+}
+
+form input {
+    width: 45%;
+}
+
+.submit-btn {
+    width: 5rem;
+    background-color: #EEEEEE;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem;
+}
+
+.submit-btn:hover {
+    background-color: rgb(222, 220, 220);
+}
+
+/* TABLE section */
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+caption {
+    margin: 1rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+td, th {
+    border: 1px solid black;
+    text-align: left;
+    padding: 0.5rem;
+}
+
+tfoot {
+    font-weight: 600;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid black;
+    padding: 0.5rem;
+}
