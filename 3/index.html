@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced Stylish Form</title>
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <div id="form-container">
+      <h1 id="form-title">We'd Love to Hear From You</h1>
+      <form id="infoForm">
+        <label for="name">Enter your name:</label>
+        <input type="text" id="name" name="name" placeholder="Your Name" required />
+
+        <label for="email">Enter your email address:</label>
+        <input type="email" id="email" name="email" placeholder="Your Email" required />
+
+        <label for="phone">Enter your phone number:</label>
+        <input type="tel" id="phone" name="phone" placeholder="Your Phone" required />
+
+        <label for="message">Write your message:</label>
+        <textarea id="message" name="message" rows="4" placeholder="Your Message" required></textarea>
+
+        <label for="options">Choose an option:</label>
+        <select id="options" name="options" required>
+          <option value="" disabled selected>-- Select an Option --</option>
+          <option value="option1">Option 1</option>
+          <option value="option2">Option 2</option>
+          <option value="option3">Option 3</option>
+        </select>
+
+        <label>Pick one of the following:</label>
+        <div id="radio-container">
+          <input type="radio" id="radio1" name="radioGroup" value="radio1" required />
+          <label for="radio1">Option A</label>
+          <input type="radio" id="radio2" name="radioGroup" value="radio2" />
+          <label for="radio2">Option B</label>
+          <input type="radio" id="radio3" name="radioGroup" value="radio3" />
+          <label for="radio3">Option C</label>
+        </div>
+
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+  </body>
+</html>
