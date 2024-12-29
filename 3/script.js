@@ -150,6 +150,13 @@ document.addEventListener('DOMContentLoaded', () => {
         completeWord.textContent = `Your score is ${score} out of ${questions.length}`;
     }
 
+    /* decode HTML entitles in questions */
+    function decodeHTML(html) {
+        const text = document.createElement("textArea");
+        text.innerHTML = html;
+        return text.value;
+    }
+
     /* fetch questions */
     fetchQuestions();
 }) 
