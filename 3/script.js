@@ -74,12 +74,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         //update question title and content
         questionTitle.textContent = `Question ${currentQuestionIndex + 1}`;
-        questionContent.textContent = question.question;
+        questionContent.textContent = decodeHTML(question.question);
 
         //clear existing answers
-        const existingAnswers = document.querySelector('.answer-container');
-        if  (existingAnswers) {
-            existingAnswers.remove();
+        const existingAnswers = document.querySelector('.answers-container');
+        if (existingAnswers) {
+            existingAnswers.remove(); 
         }
 
         // Create a container for answer options
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Add answer options as buttons
         question.answers.forEach((answer) => {
             const answerButton = document.createElement('button');
-            answerButton.textContent = answer;
+            answerButton.textContent = decodeHTML(answer);
             answerButton.classList.add('answer-btn');
             answerContainer.appendChild(answerButton);
 
@@ -135,6 +135,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* show finla score */
     function showFinalScore() {
+        //remove the question content
+        const answerContainer = document.querySelector('.answers-container');
+        if(questionTitle) questionTitle.remove();
+        if(questionContent) questionContent.remove();
+        if(answerContainer) answerContainer.remove();
+
         const completeContent = document.createElement('div');
         const completeTitle = document.createElement('h2');
         const completeWord = document.createElement('p');
@@ -156,8 +162,14 @@ document.addEventListener('DOMContentLoaded', () => {
         text.innerHTML = html;
         return text.value;
     }
+    //add submit event liistener
+    questionContainer.addEventListener('submit', (event) => {
+        event.preventDefault();
 
-    /* fetch questions */
-    fetchQuestions();
-}) 
+        //hide the form          
+        questionContainer.style.display = 'none';
+        /* fetch questions */
+        fetchQuestions();
+    });
+}) ;
 
