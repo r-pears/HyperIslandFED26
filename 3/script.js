@@ -82,19 +82,19 @@ document.addEventListener('DOMContentLoaded', () => {
             existingAnswers.remove();
         }
 
-        //create a container for answer options
+        // Create a container for answer options
         const answerContainer = document.createElement('div');
         answerContainer.classList.add('answers-container');
         questionContentContainer.appendChild(answerContainer);
 
-        //add answer option as buttons
+        // Add answer options as buttons
         question.answers.forEach((answer) => {
             const answerButton = document.createElement('button');
             answerButton.textContent = answer;
             answerButton.classList.add('answer-btn');
             answerContainer.appendChild(answerButton);
 
-            //add event listener
+            // Add event listener
             answerButton.addEventListener('click', () => handleAnswer(answer, answerButton));
         });
     }
@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
            } else {
             showFinalScore();
            }
-        }, 1000);
+        }, 300);
     }
 
     /* show finla score */
