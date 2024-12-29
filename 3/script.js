@@ -61,15 +61,96 @@ document.addEventListener('DOMContentLoaded', () => {
                 }));
                 displayQuestion();
             } else {
-                throw new error('Failed to fecth questions!');
+                throw new Error('Failed to fecth questions!');
             } 
         } catch (error) {
             questionContainer.innerHTML = `<p>Error: ${error.message}. Please try again later</p>`;
         }
     }
 
+    /* display the question */
     function displayQuestion() {
+        const question = questions[currentQuestionIndex];
 
+        //update question title and content
+        questionTitle.textContent = `Question ${currentQuestionIndex + 1}`;
+        questionContent.textContent = question.question;
+
+        //clear existing answers
+        const existingAnswers = document.querySelector('.answer-container');
+        if  (existingAnswers) {
+            existingAnswers.remove();
+        }
+
+        //create a container for answer options
+        const answerContainer = document.createElement('div');
+        answerContainer.classList.add('answers-container');
+        questionContentContainer.appendChild(answerContainer);
+
+        //add answer option as buttons
+        question.answers.forEach((answer) => {
+            const answerButton = document.createElement('button');
+            answerButton.textContent = answer;
+            answerButton.classList.add('answer-btn');
+            answerContainer.appendChild(answerButton);
+
+            //add event listener
+            answerButton.addEventListener('click', () => handleAnswer(answer, answerButton));
+        });
     }
+
+    /* handle answer selection */
+    function handleAnswer(selectedAnswer, button) {
+        const correctAnswer = questions[currentQuestionIndex].correctAnswer;
+
+        //highlight the selected answer
+        if (selectedAnswer === correctAnswer) {
+            button.classList.add('correct');
+            score++;
+        } else {
+            button.classList.add('incorrect');
+            //highlight the correct answer
+            document.querySelectorAll('.answer-btn').forEach((btn) => {
+                if (btn.textContent === correctAnswer) {
+                    btn.classList.add('correct');
+                }
+            });
+        }
+
+        //remove all buttons after answering current question
+        document.querySelectorAll('.answer-btn').forEach((btn) => {
+            btn.disabled = true;
+        });
+
+        //move to the next question after a short delay
+        setTimeout(() => {
+           currentQuestionIndex++;
+           if (currentQuestionIndex < questions.length) {
+            displayQuestion();
+           } else {
+            showFinalScore();
+           }
+        }, 1000);
+    }
+
+    /* show finla score */
+    function showFinalScore() {
+        const completeContent = document.createElement('div');
+        const completeTitle = document.createElement('h2');
+        const completeWord = document.createElement('p');
+
+        completeTitle.classList.add('complete-title');
+        completeWord.classList.add('complete-word');
+
+        completeContent.appendChild(completeTitle);
+        completeContent.appendChild(completeWord);
+        questionContentContainer.appendChild(completeContent);
+
+        completeTitle.textContent = `Quiz Complete`;
+        completeWord.textContent = `Your score is ${score} out of ${questions.length}`;
+    }
+
+    /* fetch questions */
+    fetchQuestions();
 }) 
 
