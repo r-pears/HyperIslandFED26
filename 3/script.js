@@ -137,8 +137,8 @@ document.addEventListener('DOMContentLoaded', () => {
     function showFinalScore() {
         //remove the question content
         const answerContainer = document.querySelector('.answers-container');
-        if(questionTitle) questionTitle.remove();
-        if(questionContent) questionContent.remove();
+        if(questionTitle) questionTitle.style.display = 'none';
+        if(questionContent) questionContent.style.display = 'none';
         if(answerContainer) answerContainer.remove();
 
         const completeContent = document.createElement('div');
@@ -153,7 +153,15 @@ document.addEventListener('DOMContentLoaded', () => {
         questionContentContainer.appendChild(completeContent);
 
         completeTitle.textContent = `Quiz Complete`;
-        completeWord.textContent = `Your score is ${score} out of ${questions.length}`;
+        completeWord.textContent = `Congratulations, ${username}! Your score is ${score} out of ${questions.length}`;
+
+        //set restart
+        const backButton = document.createElement("button");
+        backButton.classList.add('back-btn');
+        backButton.textContent = 'Restart';
+        questionContentContainer.appendChild(backButton);
+
+        backButton.addEventListener('click', restartQuiz);
     }
 
     /* decode HTML entitles in questions */
@@ -162,14 +170,50 @@ document.addEventListener('DOMContentLoaded', () => {
         text.innerHTML = html;
         return text.value;
     }
+
+    //hide the questioncontentcontainer before submit the username
+    /*     questionContentContainer.style.display = 'none'; */
+
     //add submit event liistener
     questionContainer.addEventListener('submit', (event) => {
         event.preventDefault();
 
+        //save the username
+        username = nameInput.value.trim();
         //hide the form          
         questionContainer.style.display = 'none';
         /* fetch questions */
         fetchQuestions();
+
+        //show the question content container
+        questionContentContainer.style.display = '';
     });
+
+    /* restart quiz function */
+    function restartQuiz() {
+        //reset the game
+        currentQuestionIndex = 0;
+        score = 0;
+
+        const answerContainer = document.querySelector('.answers-container');
+        const completeContent = document.querySelector('.complete-content');
+        const completeWord = document.querySelector('.complete-word');
+        const backButton = document.querySelector('.back-btn');
+        const completeTitle = document.querySelector('.complete-title');
+
+
+        if(answerContainer) answerContainer.remove();
+        if(completeTitle) completeTitle.remove();
+        if(completeContent) completeContent.remove();
+        if(completeWord) completeWord.remove();
+        if(backButton) backButton.remove();
+
+        //clear the question container
+        if (questionTitle) questionTitle.style.display = '';
+        if (questionContent) questionContent.style.display = '';
+
+        //display the first question
+        displayQuestion();
+    }
 }) ;
 
