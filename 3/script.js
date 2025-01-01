@@ -5,8 +5,6 @@ const secondaryBackgroundColor = "#192639";
 const body = document.querySelector("body");
 const form = document.querySelector("form");
 const textarea = document.querySelector("textarea");
-const select = document.querySelector("select");
-const option = document.querySelector("option");
 const input = document.querySelectorAll("input");
 
 const labelName = document.querySelector("label[for='name']");
@@ -14,6 +12,9 @@ const labelEmail = document.querySelector("label[for='email']");
 const labelPhone = document.querySelector("label[for='phone']");
 const labelMessage = document.querySelector("label[for='message']");
 const labelOptions = document.querySelector("label[for='options']");
+
+const select = document.getElementById("options");
+const selectOptions = document.querySelectorAll("option");
 
 
 function bodyFunction(body) {
@@ -31,7 +32,7 @@ function labelChange() {
     labelEmail.innerText = "Email Address";
     labelPhone.innerText = "Phone Number";
     labelMessage.innerText = "Message";
-    labelOptions.innerText = "Choose your category";
+    labelOptions.innerText = "Choose your option";
 }
 
 function textareaFunction(textarea) {
@@ -52,10 +53,27 @@ function inputFunction(input) {
     })
 }
 
+function selectFunction(select) {
+    select.style.padding = "0.5rem"
+    select.style.backgroundColor = secondaryBackgroundColor;
+    select.style.color = "white";
+    select.style.borderRadius = "10px";
+    select.style.borderColor = "white";
+}
+
+function optionFunction(selectOptions) {
+    selectOptions.forEach((option) => {
+        option.style.fontWeight = "bold"
+    })
+}
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
     bodyFunction(body);
     textareaFunction(textarea);
     inputFunction(input);
     labelChange();
+    selectFunction(select);
+    optionFunction(selectOptions);
 })
