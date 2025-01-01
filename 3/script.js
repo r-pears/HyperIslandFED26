@@ -132,6 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ">Close</button>
       `;
   
+      
       document.body.appendChild(popup);
   
       document.getElementById("closePopup").addEventListener("click", () => {
