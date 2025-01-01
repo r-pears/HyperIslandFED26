@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const submit = document.createElement("input");
     submit.setAttribute('type', 'submit');
-    submit.setAttribute('value', 'Submit');
+    submit.setAttribute('value', 'Start Quiz');
     questionContainer.appendChild(submit);
 
     document.body.insertBefore(questionContainer, document.body.firstChild);
@@ -172,7 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     //hide the questioncontentcontainer before submit the username
-    /*     questionContentContainer.style.display = 'none'; */
+    questionContentContainer.style.display = 'none'; 
 
     //add submit event liistener
     questionContainer.addEventListener('submit', (event) => {
