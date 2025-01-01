@@ -4,23 +4,16 @@ const secondaryBackgroundColor = "#192639";
 
 const body = document.querySelector("body");
 const form = document.querySelector("form");
-const label = document.querySelector("label");
 const textarea = document.querySelector("textarea");
 const select = document.querySelector("select");
 const option = document.querySelector("option");
-
-
-
-const radio1 = document.getElementById("radio1")
-const radio2 = document.getElementById("radio2")
-const radio3 = document.getElementById("radio3")
-
-
 const input = document.querySelectorAll("input");
-const nameInput = document.getElementById("name");
-const emailInput = document.getElementById("email");
-const phoneInput = document.getElementById("phone");
-const messageInput = document.getElementById("message");
+
+const labelName = document.querySelector("label[for='name']");
+const labelEmail = document.querySelector("label[for='email']");
+const labelPhone = document.querySelector("label[for='phone']");
+const labelMessage = document.querySelector("label[for='message']");
+const labelOptions = document.querySelector("label[for='options']");
 
 
 function bodyFunction(body) {
@@ -33,8 +26,12 @@ function bodyFunction(body) {
     body.style.fontFamily = "Helvetica, sans-serif"
 } 
 
-function labelFunction() {
-    
+function labelChange() {
+    labelName.innerText = "Full Name";
+    labelEmail.innerText = "Email Address";
+    labelPhone.innerText = "Phone Number";
+    labelMessage.innerText = "Message";
+    labelOptions.innerText = "Choose your category";
 }
 
 function textareaFunction(textarea) {
@@ -58,8 +55,7 @@ function inputFunction(input) {
 
 document.addEventListener("DOMContentLoaded", () => {
     bodyFunction(body);
-    labelFunction(label);
     textareaFunction(textarea);
     inputFunction(input);
-    inputPlaceholder(nameInput)
+    labelChange();
 })
