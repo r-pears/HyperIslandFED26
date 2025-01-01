@@ -34,14 +34,14 @@ document.addEventListener('DOMContentLoaded', () => {
     /* 2 title */
     const questionTitle = document.createElement("span");
     questionTitle.classList.add("question-title");
-    questionTitle.textContent = "question title";
+    questionTitle.textContent = "";
     questionContentContainer.appendChild(questionTitle);
 
 
     /* 3 question content */
     const questionContent = document.createElement("span");
     questionContent.classList.add("question-content");
-    questionContent.textContent = "this is content of the question";
+    questionContent.textContent = "";
     questionContentContainer.appendChild(questionContent);
 
     let currentQuestionIndex = 0;
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const question = questions[currentQuestionIndex];
 
         //update question title and content
-        questionTitle.textContent = `Question ${currentQuestionIndex + 1}`;
+        questionTitle.textContent = `Question ${currentQuestionIndex + 1} / 10`;
         questionContent.textContent = decodeHTML(question.question);
 
         //clear existing answers
