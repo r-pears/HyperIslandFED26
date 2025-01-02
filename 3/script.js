@@ -16,6 +16,16 @@ const labelOptions = document.querySelector("label[for='options']");
 const select = document.getElementById("options");
 const selectOptions = document.querySelectorAll("option");
 
+const radioAll = document.getElementsByName("radioGroup")
+const radio1 = document.getElementById("radio1")
+const radio2 = document.getElementById("radio2")
+const radio3 = document.getElementById("radio3")
+const labelRadio1 = document.querySelector("label[for='radio1']");
+const labelRadio2 = document.querySelector("label[for='radio2']");
+const labelRadio3 = document.querySelector("label[for='radio3']");
+
+const submit = document.querySelector("input[type='submit']")
+
 
 function bodyFunction(body) {
     body.style.display = "flex";
@@ -62,9 +72,35 @@ function selectFunction(select) {
 }
 
 function optionFunction(selectOptions) {
-    selectOptions.forEach((option) => {
-        option.style.fontWeight = "bold"
+    const optionText = [
+        "Dragon",
+        "Bear",
+        "Tiger"
+    ]
+    selectOptions.forEach((option, index) => {
+        if (optionText[index]) option.textContent = optionText[index]
     })
+} 
+
+function radioFunction() {
+    labelRadio1.innerText = "I like it"
+    labelRadio2.innerText = "I hate it"
+    labelRadio3.innerText = "I don't know"
+
+    const labelRadioAll = [labelRadio1, labelRadio2, labelRadio3];
+
+    labelRadioAll.forEach((labelRadioAll) => {
+        labelRadioAll.style.fontWeight = "bold"
+    })
+
+    radioAll.forEach((radioAll) => {
+        radioAll.style.margin = "0.5rem"
+    })
+}
+
+function submitFunction(submit) {
+    submit.style.width = "100%"
+    submit.style.height = "2rem"
 }
 
 
@@ -76,4 +112,6 @@ document.addEventListener("DOMContentLoaded", () => {
     labelChange();
     selectFunction(select);
     optionFunction(selectOptions);
+    radioFunction();
+    submitFunction(submit);
 })
