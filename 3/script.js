@@ -13,6 +13,11 @@ const labelPhone = document.querySelector("label[for='phone']");
 const labelMessage = document.querySelector("label[for='message']");
 const labelOptions = document.querySelector("label[for='options']");
 
+const inputName = document.getElementById("name");
+const inputEmail = document.getElementById("email");
+const inputPhone = document.getElementById("phone");
+const inputMessage = document.getElementById("message");
+
 const select = document.getElementById("options");
 const selectOptions = document.querySelectorAll("option");
 
@@ -25,7 +30,6 @@ const labelRadio2 = document.querySelector("label[for='radio2']");
 const labelRadio3 = document.querySelector("label[for='radio3']");
 
 const submit = document.querySelector("input[type='submit']")
-
 
 function bodyFunction(body) {
     body.style.display = "flex";
@@ -103,7 +107,12 @@ function submitFunction(submit) {
     submit.style.height = "2rem"
 }
 
-
+function placeholderFunction() {
+    inputName.placeholder = "Name Nameson"
+    inputEmail.placeholder = "name@email.com"
+    inputPhone.placeholder = "+ 0123 456 789"
+    inputMessage.placeholder = "Write your message here..."
+}
 
 document.addEventListener("DOMContentLoaded", () => {
     bodyFunction(body);
@@ -114,4 +123,5 @@ document.addEventListener("DOMContentLoaded", () => {
     optionFunction(selectOptions);
     radioFunction();
     submitFunction(submit);
+    placeholderFunction();
 })
