@@ -104,6 +104,15 @@ body {
             color: var(--main-background-color);
             border: 2px solid var(--border-background-color);
         }
+
+        .answer-btn.correct {
+            background-color: var(--border-background-color) !important;
+            color: white;
+        }
+        .answer-btn.incorrect {
+            background-color: #dc3545 !important;
+            color: white !important;
+        }
     }
 }
 
