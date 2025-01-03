@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
            } else {
             showFinalScore();
            }
-        }, 300);
+        }, 400);
     }
 
     /* show finla score */
@@ -154,6 +154,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
         completeTitle.textContent = `Quiz Complete`;
         completeWord.textContent = `Congratulations, ${username}! Your score is ${score} out of ${questions.length}`;
+
+        /* completeword animation */
+        setTimeout(() => {
+            completeWord.style.animation = 'none';
+            void completeWord.offsetWidth;
+            requestAnimationFrame(() => {
+                completeWord.style.animation = 'complete-word-alt 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both';
+            });
+        }, 0);
 
         //set restart
         const backButton = document.createElement("button");

@@ -149,7 +149,36 @@ body {
         color: white;
         align-self: center;
         font-size: 2rem;
+        -webkit-animation: complete-word-alt 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
     }
+    @-webkit-keyframes complete-word-alt {
+        0% {
+            letter-spacing: -0.5em;
+            opacity: 0;
+        }
+        40% {
+            opacity: 0.6;
+        }
+        100% {
+            letter-spacing: normal;
+            opacity: 1;
+        }
+    }
+    @keyframes complete-word-alt {
+        0% {
+            letter-spacing: -0.5em;
+            opacity: 0;
+        }
+        40% {
+            opacity: 0.6;
+        }
+        100% {
+            letter-spacing: normal;
+            opacity: 1;
+        }
+    }
+
+      
 }
 
 .back-btn {
