@@ -32,7 +32,7 @@ button3.addEventListener('click', function(event){
 //Button 4/5
 buttonChildContainer.addEventListener("click", function(event) {
   if (event.target.tagName === "BUTTON") {
-    alert(event.target.innerText + " clicked!");
-    event.stopPropagation();
+    alert(event.target.innerText + " clicked!")
+    event.stopPropagation()
   }
 })
