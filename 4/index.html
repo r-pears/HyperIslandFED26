@@ -37,12 +37,31 @@
   </head>
   <body>
     <div id="buttonContainer">
-      <button id="button1">Button 1</button>
+      <!--Inline Event handlers-->
+      <button id="button1" onclick="alert('button1 clicked!')">Button 1</button>
       <button id="button2">Button 2</button>
+
+      <!--DOM Level 0 Event-->
+      <script>
+        const button2 = document.getElementById("button2");
+        button2.onclick = function () {
+          alert("button2 clicked!");
+        };
+      </script>
       <button id="button3">Button 3</button>
       <div id="buttonChildContainer">
         <button id="button4">Button 4</button>
         <button id="button5">Button 5</button>
+
+        <!--Event Delegation-->
+        <script>
+          const childContainer = document.getElementById(
+            "buttonChildContainer"
+          );
+          childContainer.addEventListener("click", function (event) {
+            console.log("Child item clicked:", event.target.textContent);
+          });
+        </script>
       </div>
     </div>
 
