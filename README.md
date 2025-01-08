@@ -8,6 +8,7 @@ Assignments for Hyper Island Frontend program module: JavaScript and React.
 
 HTML Recap - find and fix the errors in the HTML file.
 
+<<<<<<< HEAD
 ### Assignment 2: CSS
 
 Style a HTML page, to make it look nice.
@@ -27,5 +28,10 @@ JavaScript Event Handlers - add click events to all buttons in the JavaScript fi
 - DO NOT delete parent event listener
 
 Prevent event propagation.
+=======
+### Assignment 2
+
+style with CSS
+>>>>>>> bec97e53dfdf670ff1336b75f8f9daa539e0c874
 
 ## React Assignments
