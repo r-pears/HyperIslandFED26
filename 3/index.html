@@ -7,45 +7,42 @@
   </head>
   <body>
     <form action="/submit" method="post">
-      <label for="name">Label text should be something else:</label>
-      <input type="text" id="name" name="name" required /><br /><br />
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required />
 
-      <label for="email">Label text should be something else:</label>
-      <input type="email" id="email" name="email" required /><br /><br />
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
 
-      <label for="phone">Label text should be something else:</label>
-      <input type="tel" id="phone" name="phone" required /><br /><br />
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" required />
 
-      <label for="message">Label text should be something else:</label><br />
+      <label for="message">Your Complain:</label>
       <textarea
         id="message"
         name="message"
         rows="4"
         cols="50"
         required
-      ></textarea
-      ><br /><br />
+      >
+      </textarea>
 
-      <label for="options">Text should be something else:</label>
+      <label for="options">Which of our resturang:</label>
       <select id="options" name="options" required>
-        <option value="option1">Option 1</option>
-        <option value="option2">Option 2</option>
-        <option value="option3">Option 3</option></select
-      ><br /><br />
+        <option value="" disabled selected>Select an option:</option>
+        <option value="option1">Kungsträdgården</option>
+        <option value="option2">Sergel Toget</option>
+        <option value="option3">Hötorget</option>
+      </select>
 
-      <label>Choose one:</label><br />
-      <input
-        type="radio"
-        id="radio1"
-        name="radioGroup"
-        value="radio1"
-        required
-      />
-      <label for="radio1">Radio 1</label><br />
-      <input type="radio" id="radio2" name="radioGroup" value="radio2" />
-      <label for="radio2">Radio 2</label><br />
-      <input type="radio" id="radio3" name="radioGroup" value="radio3" />
-      <label for="radio3">Radio 3</label><br /><br />
+      <label>How many was effected:</label>
+      <div class="radio-group">
+        <label for="radio1">One Person:</label>
+        <input type="radio" id="radio1" name="radioGroup" value="radio1" />
+        <label for="radio2">Two Person:</label>
+        <input type="radio" id="radio2" name="radioGroup" value="radio2" />
+        <label for="radio3">A Lot More ..</label>
+        <input type="radio" id="radio3" name="radioGroup" value="radio3" />
+      </div>
 
       <input type="submit" value="Submit" />
     </form>
