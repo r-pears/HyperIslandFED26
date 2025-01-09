@@ -4,19 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Form</title>
+    <script src="script.js" defer></script>
   </head>
   <body>
-    <form action="/submit" method="post">
-      <label for="name">Label text should be something else:</label>
+    <form action="/submit" method="post" id="form">
+      <label for="name" id="nameLabel">Label text should be something else:</label>
       <input type="text" id="name" name="name" required /><br /><br />
 
-      <label for="email">Label text should be something else:</label>
+      <label for="email" id="emailLabel">Label text should be something else:</label>
       <input type="email" id="email" name="email" required /><br /><br />
 
-      <label for="phone">Label text should be something else:</label>
+      <label for="phone" id="telLabel">Label text should be something else:</label>
       <input type="tel" id="phone" name="phone" required /><br /><br />
 
-      <label for="message">Label text should be something else:</label><br />
+      <label for="message" id="messageLabel">Label text should be something else:</label><br />
       <textarea
         id="message"
         name="message"
@@ -26,29 +27,22 @@
       ></textarea
       ><br /><br />
 
-      <label for="options">Text should be something else:</label>
+      <label for="options" id="optionLabel">Text should be something else:</label>
       <select id="options" name="options" required>
-        <option value="option1">Option 1</option>
-        <option value="option2">Option 2</option>
-        <option value="option3">Option 3</option></select
+        <option value="option1" id="option1">Option 1</option>
+        <option value="option2" id="option2">Option 2</option>
+        <option value="option3" id="option3">Option 3</option></select
       ><br /><br />
 
       <label>Choose one:</label><br />
-      <input
-        type="radio"
-        id="radio1"
-        name="radioGroup"
-        value="radio1"
-        required
-      />
-      <label for="radio1">Radio 1</label><br />
+      <input type="radio" id="radio1" name="radioGroup" value="radio1" required />
+      <label for="radio1" id="radio1-label">Radio 1</label><br />
       <input type="radio" id="radio2" name="radioGroup" value="radio2" />
-      <label for="radio2">Radio 2</label><br />
+      <label for="radio2" id="radio2-label">Radio 2</label><br />
       <input type="radio" id="radio3" name="radioGroup" value="radio3" />
-      <label for="radio3">Radio 3</label><br /><br />
+      <label for="radio3" id="radio3-label">Radio 3</label><br /><br />
 
       <input type="submit" value="Submit" />
     </form>
-    <script src="script.js"></script>
   </body>
 </html>
