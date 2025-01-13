@@ -1,6 +1,7 @@
 // Inline Event Handler for Button 1
-function handleButtonClick1() {
+function handleButtonClick1(event) {
   alert('Button 1 clicked');
+  event.stopPropagation();
 }
 
 // DOM Level 0 Event Handler for Button 2
