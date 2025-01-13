@@ -24,7 +24,7 @@ console.log(value);
 // TODO: Remove item from sessionStorage
 sessionStorage.removeItem('key');
 // TODO: Clear all items from sessionStorage
-sessionStorage.clear('key');
+sessionStorage.clear();
 // TODO: Add an object to sessionStorage
 let user2 = {
     name:'Asher',
