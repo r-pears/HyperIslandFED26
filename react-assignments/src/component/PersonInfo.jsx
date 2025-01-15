@@ -1,5 +1,5 @@
 import React from "react";
-
+/* function */
 function PersonInfo({props}) {
     return (
         <div class="container">
