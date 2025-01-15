@@ -7,10 +7,14 @@ function reverseString(str) {
   return reversed;
 }
 
-//Solution for Reverse Number Function
-function reverseNumber(num) {
-  return parseInt(num.toString().split('').reverse().join(''));
-}
+/**
+ * TODO write a JavaScript function that takes a number and returns it in the reverse order.
+ * Should return the reversed number.
+ * For example:
+ *   reverseNumber(12345) should return 54321
+ *   reverseNumber(98765) should return 56789
+ *   reverseNumber(101010) should return 010101
+ */
 
 //Object Destructuring
 const { name, info: { age } } = person;
