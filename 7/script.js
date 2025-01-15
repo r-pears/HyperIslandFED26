@@ -24,7 +24,7 @@ console.log(reverseString("everthing"));
  * For example:
  *   reverseNumber(12345) should return 54321
  *   reverseNumber(98765) should return 56789
- *   reverseNumber(101010) should return 010101
+ *   reverseNumber(101010) should return 10101
  */
 
 function reverseNumber(num) {
