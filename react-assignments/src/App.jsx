@@ -14,10 +14,10 @@ function App() {
   };
 
   return (
-    <div>
+    <div class="total-container">
       <header>
         <h1>This is React</h1>
-          <PersonInfo person={props}/>
+          <PersonInfo props={person}/>
       </header>
       {/* TODO create a child component in proper jsx, the component takes the person object as props and render the data */}
     </div>
