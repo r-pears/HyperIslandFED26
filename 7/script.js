@@ -7,7 +7,15 @@
  *   reverseString("world") should return "dlrow"
  *   reverseString("12345") should return "54321"
  */
-function reverseString() {}
+function reverseString(string) {
+  let flipped ="";
+  for (let i = string.length - 1; i >= 0; i--) {
+    flipped = flipped + string[i];
+  }
+  return flipped;
+}
+
+
 
 /**
  * TODO write a JavaScript function that takes a number and returns it in the reverse order.
@@ -18,7 +26,17 @@ function reverseString() {}
  *   reverseNumber(101010) should return 10101
  */
 
-function reverseNumber() {}
+function reverseNumber(number) {
+  let numToString = number.toString();
+
+  let flippedString ="";
+
+  for (let i = numToString.length-1; i>=0, i--){
+    flippedString = flippedString+numToString[i];
+  }
+
+  return parseInt(flippedString);
+}
 
 /**
  * TODO destruct the following object to get name and age.
@@ -32,11 +50,19 @@ const person = {
   },
 };
 
+const { name, info: { age } } = person;
+
+
 /**
  * TODO destruct the following array the first and second element, and the remaining elements in a third variable.
  */
 
 const thisArray = ["apple", "banana", "cherry", "dates", "elderberry", "fig"];
+
+const [fruit1, fruit2,...rest] = thisArray;
+
+
+
 
 /**
  * !!!!OPTIONAL!!!!
@@ -50,4 +76,9 @@ const thisArray = ["apple", "banana", "cherry", "dates", "elderberry", "fig"];
  *    isPalindrome("coding") should return false
  */
 
-function isPalindrome() {}
+function isPalindrome(str) {
+  const re = /[\W_]/g;
+  const lowRegStr = str.toLowerCase().replace(re, "");
+  const reverseStr = lowRegStr.split("").reverse().join(""); 
+  return reverseStr === lowRegStr;
+}
