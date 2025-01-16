@@ -7,7 +7,13 @@
  *   reverseString("world") should return "dlrow"
  *   reverseString("12345") should return "54321"
  */
-function reverseString() {}
+function reverseString() {
+  let reversed = "";
+  for (let i = str.length - 1; i >= 0; i--) {
+    reversed += str[i];
+  }
+  return reversed;
+}
 
 /**
  * TODO write a JavaScript function that takes a number and returns it in the reverse order.
@@ -18,7 +24,10 @@ function reverseString() {}
  *   reverseNumber(101010) should return 10101
  */
 
-function reverseNumber() {}
+function reverseNumber() {
+  let reversedStr = num.toString().split("").reverse().join("");
+  return parseInt(reversedStr, 10);
+}
 
 /**
  * TODO destruct the following object to get name and age.
@@ -32,11 +41,21 @@ const person = {
   },
 };
 
+const {
+  name,
+  info: {age},
+} = person;
+
 /**
  * TODO destruct the following array the first and second element, and the remaining elements in a third variable.
  */
 
-const thisArray = ["apple", "banana", "cherry", "dates", "elderberry", "fig"];
+let fruits = ["apple", "banana", "cherry", "dates", "elderberry", "fig"];
+
+const [first, second, ...rest] = fruits;
+console.log(first);
+console.log(second);
+console.log(rest);
 
 /**
  * !!!!OPTIONAL!!!!
