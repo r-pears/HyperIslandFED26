@@ -104,3 +104,4 @@ function isPalindrome(word) {
 
 console.log(isPalindrome("dragon"))
 console.log(isPalindrome("mom"))
+console.log(isPalindrome("12345"))
