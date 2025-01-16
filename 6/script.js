@@ -1,35 +1,41 @@
 // TODO: Set item in localStorage
-localStorage.setItem("key", "value");
+localStorage.setItem("name", "John Doe");
 
 // TODO: Get item from localStorage
-localStorage.getItem("key");
+localStorage.getItem("name");
 
 // TODO: Remove item from localStorage
-localStorage.removeItem("key");
+localStorage.removeItem("name");
 
 // TODO: Clear all items from localStorage
 localStorage.clear();
 
 // TODO: Add an object to localStorage
-localStorage.setItem("object", JSON.stringify({ key: "value" }));
+localStorage.setItem(
+  "user",
+  JSON.stringify({ name: "John Doe", age: 21, hobby: "Reading" })
+);
 
 // TODO: Get an object from localStorage
-JSON.parse(localStorage.getItem("object"));
+JSON.parse(localStorage.getItem("user"));
 
 // TODO: Set item in sessionStorage
-sessionStorage.setItem("key", "value");
+sessionStorage.setItem("name", "John Doe");
 
 // TODO: Get item from sessionStorage
-sessionStorage.getItem("key");
+sessionStorage.getItem("name");
 
 // TODO: Remove item from sessionStorage
-sessionStorage.removeItem("key");
+sessionStorage.removeItem("name");
 
 // TODO: Clear all items from sessionStorage
 sessionStorage.clear();
 
 // TODO: Add an object to sessionStorage
-sessionStorage.setItem("object", JSON.stringify({ key: "value" }));
+sessionStorage.setItem(
+  "user",
+  JSON.stringify({ name: "John Doe", age: 21, hobby: "Reading" })
+);
 
 // TODO: Get an object from sessionStorage
-JSON.parse(sessionStorage.getItem("object"));
+JSON.parse(sessionStorage.getItem("user"));
