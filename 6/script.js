@@ -1,41 +1,44 @@
 // TODO: Set item in localStorage
-localStorage.setItem("name", "John Doe");
+localStorage.setItem('product', 'sunglasses')
 
 // TODO: Get item from localStorage
-localStorage.getItem("name");
+const currentCategory = localStorage.getItem('category')
 
 // TODO: Remove item from localStorage
-localStorage.removeItem("name");
+localStorage.removeItem('video')
 
 // TODO: Clear all items from localStorage
 localStorage.clear();
 
 // TODO: Add an object to localStorage
-localStorage.setItem(
-  "user",
-  JSON.stringify({ name: "John Doe", age: 21, hobby: "Reading" })
-);
-
+const accessories = {
+    product: 'hat',
+    color: 'black'
+}
+localStorage.setItem('acsessories', JSON.stringify(accessories))
+console.log(accessories)
+    
 // TODO: Get an object from localStorage
-JSON.parse(localStorage.getItem("user"));
+const clothes = JSON.parse(localStorage.getItem('clothes'))
 
 // TODO: Set item in sessionStorage
-sessionStorage.setItem("name", "John Doe");
+sessionStorage.setItem('personalDiscount', discount.user())
 
 // TODO: Get item from sessionStorage
-sessionStorage.getItem("name");
+const myDiscount = sessionStorage.getItem('personalDiscount')
 
 // TODO: Remove item from sessionStorage
-sessionStorage.removeItem("name");
+sessionStorage.removeItem('summerPromo')
 
 // TODO: Clear all items from sessionStorage
-sessionStorage.clear();
+sessionStorage.clear()
 
 // TODO: Add an object to sessionStorage
-sessionStorage.setItem(
-  "user",
-  JSON.stringify({ name: "John Doe", age: 21, hobby: "Reading" })
-);
+const user = {
+    id: 'qwe890SOL38920456-so017345-yymmddnnnn',
+    currency: 'sek'
+}
+sessionStorage.setItem('user', JSON.stringify(user))
 
 // TODO: Get an object from sessionStorage
-JSON.parse(sessionStorage.getItem("user"));
+const todaysPromo = JSON.parse(sessionStorage.getItem('XmasSale'))
