@@ -8,11 +8,11 @@
  *   reverseString("12345") should return "54321"
  */
 function reverseString(string) {
-  let flipped ="";
+  let reversed ="";
   for (let i = string.length - 1; i >= 0; i--) {
-    flipped = flipped + string[i];
+    reversed = reversed + string[i];
   }
-  return flipped;
+  return reversed;
 }
 
 
@@ -29,13 +29,13 @@ function reverseString(string) {
 function reverseNumber(number) {
   let numToString = number.toString();
 
-  let flippedString ="";
+  let reversedString ="";
 
   for (let i = numToString.length-1; i>=0, i--){
-    flippedString = flippedString+numToString[i];
+    reversedString = reversedString+numToString[i];
   }
 
-  return parseInt(flippedString);
+  return parseInt(reversedString);
 }
 
 /**
