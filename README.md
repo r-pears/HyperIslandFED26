@@ -37,3 +37,11 @@ Fetch API and Promises.
 - Implement the POST request using FetchAPI and Promises
 
 ## React Assignments
+
+### Assignment 8
+
+Remember to run npm i in the folder react-assignments
+
+### Assignment 9
+
+Create a form and handle the data in state, and console.log.
