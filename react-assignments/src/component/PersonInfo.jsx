@@ -1,5 +1,4 @@
-import React from "react";
-/* function */
+/* import React from "react";
 function PersonInfo({props}) {
     return (
         <div class="container">
@@ -17,4 +16,4 @@ function PersonInfo({props}) {
     )
 }
 
-export default PersonInfo;
+export default PersonInfo; */
