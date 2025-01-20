@@ -3,7 +3,6 @@
 // - use the useEffect hook to fetch the data when the component mounts
 // - use the useState hook to store the data
 // - display the data in a list
-
 import React, { useState, useEffect } from "react";
 import "./EffectsComponent.css"
 
