@@ -17,7 +17,7 @@ const MyStateComponent = () => {
 	return (
 		<div>
 			<br />
-			<h1>My State Component</h1>
+			<h1>Assingment 9</h1>
 			<form onSubmit={handleSubmit}>
 				<input
 					type="text"

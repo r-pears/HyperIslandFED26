@@ -1,5 +1,6 @@
 import "./App.css";
 import ChildComponent from "./ChildComponent";
+import MyEffectComponent from "./Components/Effect/EffectsComponent";
 import MyStateComponent from "./Components/MyStateComponent/MyStateComponent";
 
 function App() {
@@ -15,11 +16,9 @@ function App() {
 
 	return (
 		<div>
-			<header>
-				<h1>This is React</h1>
-			</header>
 			{ChildComponent(person)}
 			{MyStateComponent()}
+      {MyEffectComponent()}
 		</div>
 	);
 }
