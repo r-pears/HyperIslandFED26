@@ -1,24 +1,22 @@
-import "./App.css";
-import PropsComponent from "./Components/MyStateComponent/PropsComponent";
+import React from 'react';
+import MyStateComponent from './Components/MyStateComponent/MyStateComponent';
+import PersonComponent from './Components/MyStateComponent/PersonComponent';
+
+const person = {
+  name: "John",
+  info: {
+    age: 30,
+    city: "New York",
+    job: "Developer",
+  },
+};
 
 function App() {
-  const person = {
-    name: "John",
-    info: {
-      age: 25,
-      city: "New York",
-      job: "Developer",
-      hobbies: ["reading", "coding", "gaming"],
-    },
-  };
-
   return (
-    <div>
-      <header>
-        <h1>This is React</h1>
-      </header>
-      {/* TODO create a child component in proper jsx, the component takes the person object as props and render the data */}
-      <PropsComponent person={person} />
+    <div className="App">
+      <h1>Welcome to My React App</h1>
+      <MyStateComponent />
+      <PersonComponent person={person} />
     </div>
   );
 }
