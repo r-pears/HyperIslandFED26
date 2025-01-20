@@ -5,17 +5,13 @@ const MyStateComponent = () => {
 	const [name, setName] = useState("John");
 	const [age, setAge] = useState(10);
 
-  const logOut = () => {
-
-  }
 
 	return (
 		<div>
 			<h1>My State Component</h1>
 			<form action="">
-				<input type="text" placeholder="Name" />
-				<input type="number" placeholder="Age" />
-        <input type="submit" placeholder="Hello"/>
+				<input type="text" placeholder="Name" onChange={setName} />
+				<input type="number" placeholder="Age" onChange={setAge} />
 			</form>
 		</div>
 	);
