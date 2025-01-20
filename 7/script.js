@@ -7,7 +7,19 @@
  *   reverseString("world") should return "dlrow"
  *   reverseString("12345") should return "54321"
  */
-function reverseString() {}
+function reverseString(string) {
+  let stringReverse = "";
+
+  for (let i = string.length - 1; i >= 0; i--) {
+    stringReverse += string[i];
+  }
+  return stringReverse;
+}
+
+console.log(reverseString("hello"))
+console.log(reverseString("12345"))
+
+
 
 /**
  * TODO write a JavaScript function that takes a number and returns it in the reverse order.
@@ -18,7 +30,17 @@ function reverseString() {}
  *   reverseNumber(101010) should return 10101
  */
 
-function reverseNumber() {}
+function reverseNumber(number) {
+  const numberNumber = number.toString()
+  let numberReverse = "";
+
+  for (let i = numberNumber.length - 1; i >= 0; i--) {
+    numberReverse += numberNumber[i];
+  }
+  return numberReverse;
+}
+
+console.log(reverseNumber(54321))
 
 /**
  * TODO destruct the following object to get name and age.
@@ -32,11 +54,24 @@ const person = {
   },
 };
 
+function destructPerson() {
+  let personDestruct = "name: " + person.name + ", " + "age: " + person.info.age;
+
+  return personDestruct;
+}
+
+console.log(destructPerson())
+
+
 /**
  * TODO destruct the following array the first and second element, and the remaining elements in a third variable.
  */
 
 const thisArray = ["apple", "banana", "cherry", "dates", "elderberry", "fig"];
+
+const [first, second, ...rest] = thisArray;
+
+console.log(first, second, rest)
 
 /**
  * !!!!OPTIONAL!!!!
@@ -50,4 +85,23 @@ const thisArray = ["apple", "banana", "cherry", "dates", "elderberry", "fig"];
  *    isPalindrome("coding") should return false
  */
 
-function isPalindrome() {}
+function isPalindrome(word) {
+
+  word = word.toString();
+
+  let letters = word.split("");
+
+  let reversedLetters = letters.reverse();
+
+  let reversedWord = reversedLetters.join("");
+
+  if (word.toLowerCase() == reversedWord.toLowerCase()) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+console.log(isPalindrome("dragon"))
+console.log(isPalindrome("mom"))
+console.log(isPalindrome("12345"))
