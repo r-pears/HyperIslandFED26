@@ -4,6 +4,7 @@ import MyFormComponent from "./Components/MyStateComponent/MyStateComponent.jsx"
 import "./Components/MyStateComponent/MyStateComponent.css";
 /* import PersonInfo from "./component/PersonInfo"; */
 
+import PropsComponent from "./Components/MyStateComponent/PropsComponent";
 
 function App() {
 /*   const person = {
@@ -21,6 +22,7 @@ function App() {
     <div>
       <MyFormComponent />
       {/* TODO create a child component in proper jsx, the component takes the person object as props and render the data */}
+      <PropsComponent person={person} />
     </div>
   );
 }
