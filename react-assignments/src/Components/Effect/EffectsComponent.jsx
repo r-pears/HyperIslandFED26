@@ -3,3 +3,13 @@
 // - use the useEffect hook to fetch the data when the component mounts
 // - use the useState hook to store the data
 // - display the data in a list
+
+
+import React from "react";
+
+const EffectsComponent = () => {
+    const text = "hello";
+    return text;
+}
+
+export default EffectsComponent;
