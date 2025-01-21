@@ -7,7 +7,17 @@
  *   reverseString("world") should return "dlrow"
  *   reverseString("12345") should return "54321"
  */
-function reverseString() {}
+function reverseString(str) {
+  let reversed = "";
+  for (let i = str.length - 1; i >= 0; i--) {
+    reversed += str[i];
+  }
+  return reversed;
+}
+
+console.log(reverseString("hello")); 
+console.log(reverseString("world")); 
+console.log(reverseString("12345")); 
 
 /**
  * TODO write a JavaScript function that takes a number and returns it in the reverse order.
@@ -32,12 +42,22 @@ const person = {
   },
 };
 
+const { name, info: { age } } = person;
+
+console.log(name); 
+console.log(age); 
+
 /**
  * TODO destruct the following array the first and second element, and the remaining elements in a third variable.
  */
 
 const thisArray = ["apple", "banana", "cherry", "dates", "elderberry", "fig"];
 
+const [first, second, ...rest] = thisArray;
+
+console.log(first); 
+console.log(second); 
+console.log(rest);   
 /**
  * !!!!OPTIONAL!!!!
  * TODO Write a JavaScript function that checks if a string is a palindrome. A palindrome is a word, phrase, number, or other sequence of characters that reads * the same forward and backward. For example, "madam" is a palindrome.
@@ -50,4 +70,22 @@ const thisArray = ["apple", "banana", "cherry", "dates", "elderberry", "fig"];
  *    isPalindrome("coding") should return false
  */
 
-function isPalindrome() {}
+
+ // *FOR RYAN* got help with this function here: https://www.programiz.com/javascript/examples/palindrome
+
+function isPalindrome(string) {
+  string = string.replace(/\s+/g, "").toLowerCase(); 
+  const len = string.length;
+
+  for (let i = 0; i < len / 2; i++) {
+      if (string[i] !== string[len - 1 - i]) {
+          return false; 
+      }
+  }
+  return true; 
+}
+
+console.log(isPalindrome("madam"));
+console.log(isPalindrome("hello"));
+console.log(isPalindrome("12321"));
+console.log(isPalindrome("coding"));
