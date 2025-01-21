@@ -1,5 +1,4 @@
 import "./App.css";
-import ChildComponent from "./ChildComponent";
 
 function App() {
   const person = {
@@ -18,7 +17,6 @@ function App() {
         <h1>Person</h1>
       </header>
       {/* TODO create a child component in proper jsx, the component takes the person object as props and render the data */}
-      <ChildComponent person={person} />
     </div>
   );
 }
