@@ -1,0 +1,26 @@
+{
+  "name": "hyperislandfed26",
+  "version": "1.0.0",
+  "description": "Assignments for Hyper Island Frontend program module: JavaScript and React.",
+  "main": "index.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/minzikimi/HyperIslandFED26.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/minzikimi/HyperIslandFED26/issues"
+  },
+  "homepage": "https://github.com/minzikimi/HyperIslandFED26#readme",
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-scripts": "^5.0.1"
+  }
+}

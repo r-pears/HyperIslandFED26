@@ -1,10 +1,37 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 const MyStateComponent = () => {
-  // TODO create a form using useState hook, the form should have two input fields, one for name and one for age, and a submit button and handle form data. Submit/console.log the form data.
+  const [name, setName] = useState("");
+  const [age, setAge] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("name : ", name, "age : ", age);
+  };
+
   return (
     <div>
       <h1>My State Component</h1>
+
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="name">Name:</label>
+        <input
+          type="text"
+          id="name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+
+        <label htmlFor="age">Age:</label>
+        <input
+          type="number"
+          id="age"
+          value={age}
+          onChange={(e) => setAge(e.target.value)}
+        />
+
+        <button type="submit">Submit</button>
+      </form>
     </div>
   );
 };
