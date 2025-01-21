@@ -10,51 +10,32 @@ import "./EffectsComponent.css"
 
 function EffectsComponent() {
 
-const[data, setData] = useState(null);
-
-useEffect(() => {
-    fetch('https://thronesapi.com/api/v2/Characters')
-        .then((response)=> {
-            if (!response) {
-                throw new Error("Error loading")
+    const [data, setData] = useState([]);
+  
+    useEffect(() => {
+      fetch("https://thronesapi.com/api/v2/Characters")
+        .then((response) => {
+            if(!response) {
+                throw new Error("Failed to fetch data")
             }
+            return response.json()
         })
         .then((data) => setData(data))
         .catch((error) => {
             console.error(error)
         })
-}, []);
+    }, []);
+    
+  
+    return (
+      <ul>
+          {data.map((character) => (
+              <li>{character.fullName}</li>
+          ))}
+      </ul>
+    );
 
-return (
-    <div>
-        <ul>
-            {data.map((character)=> (
-                <li>{character.fullName}</li>
-            ))}
-        </ul>
-    </div>
-)
 
 }
 
 export default EffectsComponent;
-
-/* fetch('https://thronesapi.com/api/v2/Characters')
-.then((response) => response.json())
-.then((data) => setData(data))
-.catch((error) => setError(error))
-.finally(() => setLoadingData(false));
-}, []);
-
-if (loadingData) return <p>Loading</p>
-if (error) return <p>Error</p>
-
-return (
-<div>
-    <ul>
-        {data.map((character)=> (
-            <li>{character.fullName}</li>
-        ))}
-    </ul>
-</div>
-) */
