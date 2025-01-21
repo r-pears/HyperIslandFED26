@@ -1,5 +1,5 @@
 import "./App.css";
-import PropsComponent from "./Components/MyStateComponent/PropsComponent";
+import MyStateComponent from "./Components/MyStateComponent/MyStateComponent";
 
 function App() {
   const person = {
