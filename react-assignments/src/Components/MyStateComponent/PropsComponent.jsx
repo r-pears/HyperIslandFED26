@@ -23,4 +23,5 @@ function PropsComponent(props) {
   );
 }
 
-export default PropsComponent;
+
+export PropsComponent;
