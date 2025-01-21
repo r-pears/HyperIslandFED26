@@ -1,5 +1,6 @@
 import "./App.css";
 import PropsComponent from "./Components/MyStateComponent/PropsComponent";
+import EffectsComponent from "./Components/Effect/EffectsComponent";
 
 function App() {
   
