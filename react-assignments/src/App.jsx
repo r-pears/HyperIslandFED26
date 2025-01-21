@@ -1,5 +1,4 @@
 import "./App.css";
-import PersonProfile from "./PersonProfile";
 
 function App() {
   const person = {
@@ -17,7 +16,7 @@ function App() {
       <header>
         <h1>This is React</h1>
       </header>
-      <PersonProfile person={person}/>
+
     </div>
   );
 }
