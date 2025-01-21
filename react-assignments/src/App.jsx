@@ -1,5 +1,5 @@
 import "./App.css";
-import PersonProfile from "./PersonProfile";
+
 
 function App() {
   const person = {
