@@ -2,7 +2,17 @@ import EventComponent from "./Components/Events/EventComponent";
 import MyFirstComponent from "./Components/Props/MyFirstComponent";
 import MyWrapperComponent from "./Components/Props/MyWrapperComponent";
 import MyStateComponent from "./Components/State/MyStateComponent";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import FetchComponent from "./Components/useEffect/FetchComponent";
+import EffectsComponent from "./Components/useEffect/EffectsComponent";
+import RefComponent from "./Components/useEffect/RefComponent";
+import FetchExampleComponent from "./Components/useEffect/FetchExampleComponent";
+import Homepage from "./Components/Homepage/Homepage";
+import { BrowserRouter as Router, Routes, Route } from "react-router";
+import Nav from "./Components/Nav/Nav";
+import MySecondComponent from "./Components/Props/MySecondComponent";
+import ErrorPage from "./Components/404/ErrorPage";
+import CharacterComponent from "./Components/useEffect/CharacterComponent";
 
 function App() {
   const userName = "John";
@@ -78,26 +88,32 @@ function App() {
   }
 
   return (
-    <div>
-      {isLoggedIn ? <h1>Welcome</h1> : <h1>Login</h1>}
-      {showContent && (
-        <MyWrapperComponent
-          Component={MyFirstComponent}
-          ComponentProps={user}
+    <>
+      <Nav />
+      <Routes>
+        <Route index element={<Homepage />} />
+        <Route path="/fetch" element={<FetchComponent />} />
+        <Route path="character">
+          <Route index element={<FetchExampleComponent />} />
+          <Route path=":name" element={<CharacterComponent />} />
+        </Route>
+
+        <Route path="/effects" element={<EffectsComponent />} />
+        <Route path="/ref" element={<RefComponent />} />
+        <Route path="/events" element={<EventComponent />} />
+        <Route path="/state" element={<MyStateComponent user={user} />} />
+        <Route
+          path="/wrapper"
+          element={
+            <MyWrapperComponent
+              Component={MyFirstComponent}
+              ComponentProps={user}
+            />
+          }
         />
-      )}
-      <h4>Available users:</h4>
-      {allUsers.map((user) => (
-        <p key={user.name}>{user.name}</p>
-      ))}
-      <h1>{count}</h1>
-      <MyStateComponent
-        user={user}
-        count={count}
-        clickEventHandler={clickEventHandler}
-      />
-      <EventComponent />
-    </div>
+        <Route path="*" element={<ErrorPage />} />
+      </Routes>
+    </>
   );
 }
 

@@ -1,7 +1,7 @@
-import React from 'react';
-import MyStateComponent from './Components/MyStateComponent/MyStateComponent';
-import PersonComponent from './Components/MyStateComponent/PersonComponent';
-import GameOfThronesCharacters from './Components/Effect/EffectsComponent';
+import EffectsComponent from "./Components/Effect/EffectsComponent";
+import "./App.css";
+import MyStateComponent from "./Components/MyStateComponent/MyStateComponent";
+import PropsComponent from "./Components/MyStateComponent/PropsComponent";
 
 
 const person = {
@@ -13,13 +13,16 @@ const person = {
   },
 };
 
-function App() {
+  //  TODO ad routes to the components we've created so far
   return (
-    <div className="App">
-      <h1>Welcome to My React App</h1>
-      <MyStateComponent />
-      <PersonComponent person={person} />
-      <GameOfThronesCharacters />
+    <div>
+      <header>
+        <h1>This is React</h1>
+      </header>
+      {/* TODO create a child component in proper jsx, the component takes the person object as props and render the data */}
+      {/* <PropsComponent person={person} /> */}
+      {/* <MyStateComponent /> */}
+      <EffectsComponent />
     </div>
   );
 }
