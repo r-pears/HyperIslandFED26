@@ -1,10 +1,12 @@
 import EffectsComponent from "./Components/Effect/EffectsComponent";
 import "./App.css";
+
 import MyStateComponent from "./Components/StateComponent/MyStateComponent";
 import PropsComponent from "./Components/StateComponent/PropsComponent";
 import { BrowserRouter as Router, Routes, Route } from "react-router";
 
 import MyNavLink from "./Components/MyNavLink/MyNavLink";
+
 
 function App() {
   const person = {
@@ -24,6 +26,7 @@ function App() {
         <h1>This is React</h1>
       </header>
       {/* TODO create a child component in proper jsx, the component takes the person object as props and render the data */}
+
       <>
         <div className="container">
           <MyNavLink to="/effectsComponent">EffectsComponent</MyNavLink>
@@ -39,6 +42,7 @@ function App() {
           </Route>
         </Routes>
       </>
+
     </div>
   );
 }
