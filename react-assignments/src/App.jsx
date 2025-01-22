@@ -1,3 +1,4 @@
+import EffectsComponent from "./Components/Effect/EffectsComponent";
 import "./App.css";
 /* import "./component/PersonInfo.css" */
 import MyFormComponent from "./Components/MyStateComponent/MyStateComponent.jsx";
@@ -19,6 +20,7 @@ function App() {
   }; */
   console.log("App component rendered");
 
+  //  TODO ad routes to the components we've created so far
   return (
     <div>
       <MyFormComponent />
