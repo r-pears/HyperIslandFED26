@@ -88,32 +88,9 @@ function App() {
   }
 
   return (
-    <>
-      <Nav />
-      <Routes>
-        <Route index element={<Homepage />} />
-        <Route path="/fetch" element={<FetchComponent />} />
-        <Route path="character">
-          <Route index element={<FetchExampleComponent />} />
-          <Route path=":name" element={<CharacterComponent />} />
-        </Route>
-
-        <Route path="/effects" element={<EffectsComponent />} />
-        <Route path="/ref" element={<RefComponent />} />
-        <Route path="/events" element={<EventComponent />} />
-        <Route path="/state" element={<MyStateComponent user={user} />} />
-        <Route
-          path="/wrapper"
-          element={
-            <MyWrapperComponent
-              Component={MyFirstComponent}
-              ComponentProps={user}
-            />
-          }
-        />
-        <Route path="*" element={<ErrorPage />} />
-      </Routes>
-    </>
+    <div>
+      <h1>This is my changes</h1>
+    </div>
   );
 }
 
