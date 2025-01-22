@@ -18,7 +18,7 @@ function App() {
 		<div>
 			{ChildComponent(person)}
 			{MyStateComponent()}
-      {MyEffectComponent()}
+			{MyEffectComponent()}
 		</div>
 	);
 }
