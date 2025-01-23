@@ -1,12 +1,21 @@
 import "./App.css";
-import MyStateComponent from "./Components/MyStateComponent/MyStateComponent";
+import EffectsComponent from "./Components/Effect/EffectsComponent";
 
 function App() {
   
+  const person = {
+    name: "John",
+    info: {
+      age: 25,
+      city: "New York",
+      job: "Developer",
+      hobbies: ["reading", "coding", "gaming"],
+    },
+  };
 
   return (
     <div>
-      <MyStateComponent />
+      <EffectsComponent />
     </div>
   );
 }
