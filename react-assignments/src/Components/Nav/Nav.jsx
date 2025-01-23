@@ -8,7 +8,13 @@ function Nav() {
                     <NavLink to="/">Home</NavLink>
                 </li>
                 <li>
-                    {/* <NavLink to="/effects">Effects Component</NavLink> */}
+                    <NavLink to="/effects">Effects Component</NavLink>
+                </li>
+                <li>
+                    <NavLink to="/mystate">State Component</NavLink>
+                </li>
+                <li>
+                    <NavLink to="/props">Prop Component</NavLink>
                 </li>
             </ul>
         </nav>

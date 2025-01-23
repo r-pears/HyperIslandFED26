@@ -27,6 +27,10 @@ function App() {
      
        <Routes>
          <Route index element={<Homepage />}/>
+         <Route path="/effects" element={<EffectsComponent />} />
+         <Route path="/mystate" element={<MyStateComponent />} />
+         <Route path="/props" element={<PropsComponent person={person} />} />
+
        </Routes>
      
       
