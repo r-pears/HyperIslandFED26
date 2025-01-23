@@ -32,7 +32,7 @@ const MyEffectComponent = () => {
             <h1>Assignment 10</h1>
 			<ol>
 				{data.map((character) => {
-					return <li>{character.firstName + " " + character.lastName}</li>;
+					return <li key={character.id}>{character.firstName + " " + character.lastName}</li>;
 				})}
 			</ol>
 		</div>

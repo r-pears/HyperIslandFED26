@@ -1,8 +1,12 @@
 import EffectsComponent from "./Components/Effect/EffectsComponent";
 import "./App.css";
-import ChildComponent from "./ChildComponent";
+import ChildComponent from "./Components/Child/ChildComponent";
 import MyEffectComponent from "./Components/Effect/EffectsComponent";
 import MyStateComponent from "./Components/MyStateComponent/MyStateComponent";
+import { BrowserRouter as Router, Routes, Route } from "react-router";
+import Navbar from "./Components/Nav/nav";
+import Home from "./Components/Home/home";
+import WrapComponent from "./Components/Child/WrapComponent";
 
 function App() {
 	const person = {
@@ -15,18 +19,21 @@ function App() {
 		},
 	};
 
-  //  TODO ad routes to the components we've created so far
-  return (
-    <div>
-      <header>
-        <h1>This is React</h1>
-      </header>
-      {/* TODO create a child component in proper jsx, the component takes the person object as props and render the data */}
-      {/* <PropsComponent person={person} /> */}
-      {/* <MyStateComponent /> */}
-      <EffectsComponent />
-    </div>
-  );
+	//  TODO ad routes to the components we've created so far
+	return (
+		<>
+			<Navbar />
+			<Routes>
+				<Route index element={<Home />} />
+				<Route path="/state" element={<MyStateComponent />}></Route>
+				<Route path="/effect" element={<EffectsComponent />}></Route>
+				<Route
+					path="/child"
+					element={<WrapComponent Component={ChildComponent} Props={person} />}
+				></Route>
+			</Routes>
+		</>
+	);
 }
 
 export default App;
