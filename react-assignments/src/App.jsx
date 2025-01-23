@@ -1,5 +1,7 @@
+import EffectsComponent from "./Components/Effect/EffectsComponent";
 import "./App.css";
 import Child from "./Child";
+import MyStateComponent from "./Components/MyStateComponent/MyStateComponent";
 import PropsComponent from "./Components/MyStateComponent/PropsComponent";
 import EffectsComponent from "./Components/Effect/EffectsComponent";
 
@@ -15,6 +17,7 @@ function App() {
     },
   };
 
+  //  TODO ad routes to the components we've created so far
   return (
     <div>
       <header>
@@ -23,7 +26,9 @@ function App() {
       <Child person={person}/>
       <EffectsComponent />
       {/* TODO create a child component in proper jsx, the component takes the person object as props and render the data */}
-      <PropsComponent person={person} />
+      {/* <PropsComponent person={person} /> */}
+      {/* <MyStateComponent /> */}
+      <EffectsComponent />
     </div>
   );
 }
