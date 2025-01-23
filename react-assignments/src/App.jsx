@@ -2,7 +2,9 @@ import EffectsComponent from "./Components/Effect/EffectsComponent";
 import "./App.css";
 import MyStateComponent from "./Components/MyStateComponent/MyStateComponent";
 import PropsComponent from "./Components/MyStateComponent/PropsComponent";
-// import EffectsComponent from "./Components/Effect/EffectsComponent";
+import Nav from "./Components/Nav/Nav"
+import { BrowserRouter as Router, Routes, Route } from "react-router";
+import Homepage from "./Components/Home/Homepage";
 
 function App() {
   
@@ -21,10 +23,13 @@ function App() {
       <header>
         <h1>This is React</h1>
       </header>
-      {/* TODO create a child component in proper jsx, the component takes the person object as props and render the data */}
-      {/* <PropsComponent person={person} /> */}
-      {/* <MyStateComponent /> */}
-      <EffectsComponent />
+      <Nav />
+     
+       <Routes>
+         <Route index element={<Homepage />}/>
+       </Routes>
+     
+      
     </div>
   );
 }
