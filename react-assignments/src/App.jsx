@@ -3,8 +3,8 @@ import "./App.css";
 import Child from "./Child";
 import MyStateComponent from "./Components/MyStateComponent/MyStateComponent";
 import PropsComponent from "./Components/MyStateComponent/PropsComponent";
-import EffectsComponent from "./Components/Effect/EffectsComponent";
-
+import ErrorPage from "./Components/404/ErrorPage";
+import { Routes, Route } from "react-router";
 
 function App() {
   const person = {
@@ -19,17 +19,16 @@ function App() {
 
   //  TODO ad routes to the components we've created so far
   return (
-    <div>
-      <header>
-        <h1>This is React</h1>
-      </header>
-      <Child person={person}/>
-      <EffectsComponent />
-      {/* TODO create a child component in proper jsx, the component takes the person object as props and render the data */}
-      {/* <PropsComponent person={person} /> */}
-      {/* <MyStateComponent /> */}
-      <EffectsComponent />
-    </div>
+    <Routes>
+      <Route path="myComponent">
+          <Route index element={<PropsComponent person={person} />} />
+          <Route path="child" element={<Child person={person}/>} />
+        </Route>
+
+      <Route path="/effects" element={<EffectsComponent />} />
+      <Route path="/myState" element={<MyStateComponent />} />
+      <Route path="*" element={<ErrorPage />} />
+    </Routes>
   );
 }
 
