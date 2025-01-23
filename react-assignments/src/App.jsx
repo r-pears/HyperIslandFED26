@@ -2,8 +2,7 @@ import EffectsComponent from "./Components/Effect/EffectsComponent";
 import "./App.css";
 import MyStateComponent from "./Components/MyStateComponent/MyStateComponent";
 import PropsComponent from "./Components/MyStateComponent/PropsComponent";
-import Component1 from "./Component/Component1/Component1";
-import MyStateComponent from "./Components/MyStateComponent/MyStateComponent";
+import Component1 from "./Components/MyStateComponent/Component1";
 
 function App() {
   const person = {
@@ -20,10 +19,9 @@ function App() {
   return (
     <div>
         <h1>Person Info</h1>
-        <Component1 person={person} />
-      {/* TODO create a child component in proper jsx, the component takes the person object as props and render the data */}
-      {/* <PropsComponent person={person} /> */}
-      {/* <MyStateComponent /> */}
+      <Component1 person={person} />
+      <PropsComponent person={person} />
+      <MyStateComponent />
       <EffectsComponent />
     </div>
   );
