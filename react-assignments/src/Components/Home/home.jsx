@@ -1,6 +1,6 @@
 const Home = () => {
     return(
-        <h1>This is React</h1>
+            <h1>HOME PAGE</h1>
     )
 }
 
