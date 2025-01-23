@@ -2,8 +2,10 @@ import EffectsComponent from "./Components/Effect/EffectsComponent";
 import "./App.css";
 import MyStateComponent from "./Components/MyStateComponent/MyStateComponent";
 import PropsComponent from "./Components/MyStateComponent/PropsComponent";
+import EffectsComponent from "./Components/Effect/EffectsComponent";
 
 function App() {
+  
   const person = {
     name: "John",
     info: {
@@ -14,7 +16,6 @@ function App() {
     },
   };
 
-  //  TODO ad routes to the components we've created so far
   return (
     <div>
       <header>
