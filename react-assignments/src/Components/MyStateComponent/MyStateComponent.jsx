@@ -6,45 +6,34 @@ import "./MyStateComponent.css"
 
 
 const MyStateComponent = () => {
-  
-  const[inputName, setInputName] = useState("");
-  const[inputAge, setInputAge] = useState("");
+  // TODO create a form using useState hook, the form should have two input fields, one for name and one for age, and a submit button and handle form data. Submit/console.log the form data.
+  const [myForm, setMyForm] = useState({ name: "", age: null });
 
-  const handleName = (e) => {
-    setInputName(e.target.value)
-  }
-
-  const handleAge = (e) => {
-    setInputAge(e.target.value)
-  }
-
-  const handleClick = (e) => {
-    e.preventDefault();
-    console.log("Your name:", inputName, "Your age:", inputAge, "years old.")
+  function handleUpdateForm(e) {
+    setMyForm({ ...myForm, [e.target.name]: e.target.value });
   }
 
   return (
+    <div>
+      <h1>My State Component</h1>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          console.log(myForm);
+        }}
+      >
+        <input
+          type="text"
+          placeholder="Name"
+          name="name"
+          onChange={handleUpdateForm}
+        />
 
-    <form>
-      <input 
-      type="text"
-      onChange={handleName}
-      name="name"
-      placeholder="Write your name.." 
-      />
-      <input 
-      type="text"
-      onChange={handleAge}
-      name="age"
-      placeholder="Write your age.." 
-      />
-      <button onClick={handleClick}>Submit</button>
-    </form>
-
-  )
-
-
- 
+        <input type="number" name="age" onChange={handleUpdateForm} />
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  );
 };
 
 export default MyStateComponent;
