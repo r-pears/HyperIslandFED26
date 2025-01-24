@@ -15,7 +15,6 @@ function App() {
     },
   };
 
-  //  TODO ad routes to the components we've created so far
   return (
     <div>
       <header>
