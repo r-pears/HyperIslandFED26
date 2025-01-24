@@ -3,7 +3,7 @@ import "./App.css";
 import MyStateComponent from "./Components/MyStateComponent/MyStateComponent";
 import PropsComponent from "./Components/MyStateComponent/PropsComponent";
 import { BrowserRouter, Routes, Route } from "react-router";
-import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router";
 function App() {
   const person = {
     name: "John",
