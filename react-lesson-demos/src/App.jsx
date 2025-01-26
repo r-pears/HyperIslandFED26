@@ -2,16 +2,37 @@ import EventComponent from "./Components/Events/EventComponent";
 import MyFirstComponent from "./Components/Props/MyFirstComponent";
 import MyWrapperComponent from "./Components/Props/MyWrapperComponent";
 import MyStateComponent from "./Components/State/MyStateComponent";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useReducer } from "react";
 import FetchComponent from "./Components/useEffect/FetchComponent";
 import EffectsComponent from "./Components/useEffect/EffectsComponent";
 import RefComponent from "./Components/useEffect/RefComponent";
 import FetchExampleComponent from "./Components/useEffect/FetchExampleComponent";
+import Homepage from "./Components/Homepage/Homepage";
+import { BrowserRouter as Router, Routes, Route } from "react-router";
+import Nav from "./Components/Nav/Nav";
+import MySecondComponent from "./Components/Props/MySecondComponent";
+import ErrorPage from "./Components/404/ErrorPage";
+import CharacterComponent from "./Components/useEffect/CharacterComponent";
+import CounterReadOnly from "./Components/context/CounterReadOnly";
+import Child from "./Components/prop/Child";
+import NumberFactNoCallback from "./Components/useCallback/NumberFactNoCallback";
+import NumberFactUseCallback from "./Components/useCallback/NumberFactUseCallback";
+import Parent from "./Components/memo/Parent";
+import NewMemeForm from "./Components/useReducer/NewMemeForm";
+import MemeList from "./Components/useReducer/MemeList";
+import {
+  DispatchContext,
+  MemeContext,
+} from "./Components/useReducer/memeContext";
+import rootReducer from "./Components/useReducer/rootReducer";
 
 function App() {
   const userName = "John";
   const [count, setCount] = useState(10);
   let user;
+
+  const [state, dispatch] = useReducer(rootReducer, { memes: [] });
+
   let allUsers = [
     {
       name: "John",
@@ -82,31 +103,47 @@ function App() {
   }
 
   return (
-    <div>
-      {/* {isLoggedIn ? <h1>Welcome</h1> : <h1>Login</h1>}
-      {showContent && (
-        <MyWrapperComponent
-          Component={MyFirstComponent}
-          ComponentProps={user}
+    <>
+      <Nav />
+      <Routes>
+        <Route index element={<Homepage />} />
+        <Route path="/fetch" element={<FetchComponent />} />
+        <Route path="character">
+          <Route index element={<FetchExampleComponent />} />
+          <Route path=":name" element={<CharacterComponent />} />
+        </Route>
+
+        <Route path="/effects" element={<EffectsComponent />} />
+        <Route path="/ref" element={<RefComponent />} />
+        <Route path="/events" element={<EventComponent />} />
+        <Route path="/state" element={<MyStateComponent user={user} />} />
+        <Route
+          path="/wrapper"
+          element={
+            <MyWrapperComponent
+              Component={MyFirstComponent}
+              ComponentProps={user}
+            />
+          }
         />
-      )}
-      <h4>Available users:</h4>
-      {allUsers.map((user) => (
-        <p key={user.name}>{user.name}</p>
-      ))}
-      <h1>{count}</h1> */}
-      {/* <MyStateComponent
-        user={user}
-        count={count}
-        clickEventHandler={clickEventHandler}
-      /> */}
-      {/* <EventComponent /> */}
-      {/* <FetchComponent /> */}
-      {/* <EffectsComponent /> */}
-      {/* <RefComponent /> */}
-      {/* <FetchExampleComponent /> */}
-      <FetchExampleComponent />
-    </div>
+        <Route path="*" element={<ErrorPage />} />
+      </Routes>
+      {/* <NumberFactNoCallback /> */}
+      {/* <NumberFactUseCallback /> */}
+      <Parent />
+      {/* <NumberFactUseCallback /> */}
+
+      {/* <div>
+        <DispatchContext.Provider value={dispatch}>
+          <MemeContext.Provider value={state.memes}>
+            <NewMemeForm />
+            <MemeList />
+          </MemeContext.Provider>
+        </DispatchContext.Provider>
+      </div> */}
+
+      {/* <CounterReadOnly /> */}
+    </>
   );
 }
 
